@@ -88,8 +88,7 @@
                 @foreach ( $items as $item)
                 <tr style="background-color: #ddd;">
                     <td class="lighter-color"><i class="far fa-star"></i></td>
-                    <!-- <td><img src="{{ $item->sclass->sclass_pic }}" alt="Ảnh" width="50"></td> -->
-                    <td><img src="{{ asset('image/mu.png') }}" alt="Ảnh" width="25"></td>
+                    <td>{{ $item->sclass->sclass_pic }}</td>
                     <td colspan="6">{{ $item->sclass->name_e}}</td>
                 </tr>
                 @foreach ( $items as $item)
@@ -98,12 +97,13 @@
                     <td id="match_time_{{ $item->id }}" class="lighter-color">{{ $item->match_time}}</td>
                     <td id="match_minute_{{ $item->id }}"> <span style="color: red;">0'</td>
                     <!-- <td>{{ $item->homeTeam->name_e}} {{ $item->homeTeam->flag}}</td> -->
-                    <td>{{ $item->homeTeam->name_e}}<img src="{{ asset('image/mu.png') }}" width="25"></td>
+                    <td>{{ $item->homeTeam->name_e}} <img src="{{ $item->homeTeam->flag }}" alt="Flag" width="25"></td>
+
                     <td>
                         <span style="color: red;">{{ $item->home_score}}</span><span style="color: red;">-</span><span
                             style="color: red;">{{ $item->guest_score}}</span>
                     </td>
-                    <td>{{ $item->homeTeam->flag}} {{ $item->guestTeam->name_e}}</td>
+                    <td><img src="{{ $item->homeTeam->flag }}" alt="Flag" width="25">{{ $item->guestTeam->name_e }}</td>
                     <td class="lighter-color">HT {{ $item->home_half_score}}-{{ $item->guest_half_score}}</td>
                     <td class="lighter-color">
                         <i class="fas fa-flag"></i>

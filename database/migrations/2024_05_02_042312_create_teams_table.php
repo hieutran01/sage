@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name_e', 50);
             $table->char('found_date', 20)->nullable();
             $table->integer('capacity')->nullable();
-            $table->char('flag', 50)->nullable();
+            $table->char('flag', 255)->nullable();
             $table->string('address', 150)->nullable();
             $table->string('url', 80)->nullable();
             $table->string('guest_polo_shirt', 50)->nullable();
