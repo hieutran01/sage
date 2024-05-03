@@ -9,7 +9,6 @@ class ScheduleController extends Controller
 {
     public function index(){
         $items = Schedule::all();
-        // dd($items);
         $params = [
             'items' => $items
         ];

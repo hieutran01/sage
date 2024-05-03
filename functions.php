@@ -17,22 +17,6 @@ if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
 }
 
 require $composer;
-
-global $table_prefix;
-// Add Illuminate\Database
-$capsule = new Capsule;
-$capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => DB_HOST,
-    'database' => DB_NAME,
-    'username' => DB_USER,
-    'password' => DB_PASSWORD,
-    'charset' => 'utf8',
-    'collation' => 'utf8mb3_general_ci',
-    'prefix' => $table_prefix,
-]);
-$capsule->setAsGlobal();
-$capsule->bootEloquent();
 /*
 |--------------------------------------------------------------------------
 | Register The Bootloader
@@ -79,3 +63,6 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+
+require_once __DIR__.'/custom/Custom_Walker_Nav_Menu.php';
