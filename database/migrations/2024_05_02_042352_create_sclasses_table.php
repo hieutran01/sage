@@ -22,7 +22,7 @@ return new class extends Migration
             $table->smallInteger('count_round');
             $table->smallInteger('curr_round');
             $table->char('curr_match_season', 10);
-            $table->string('sclass_pic', 50)->nullable();
+            $table->string('sclass_pic', 255)->nullable();
             $table->tinyInteger('if_stop');
             $table->tinyInteger('sclass_type')->nullable();
             $table->smallInteger('count_group');
