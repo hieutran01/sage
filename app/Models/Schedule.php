@@ -26,8 +26,11 @@ class Schedule extends Model {
     }
 
     // Custom methods
-    public static function getAll( $match_state = '' ){
+    public static function getAll( $match_state = '',$match_ids = [] ){
         $query = self::orderBy('match_time','ASC');
+        if( count($match_ids) ){
+            $query->whereIn('schedule_id',$match_ids);
+        }
         if( $match_state !== '' ){
             if($match_state == self::IS_LIVE){
                 $query->where('is_live',self::IS_LIVE);

@@ -11,29 +11,45 @@ class ScheduleController extends Controller
     public function index(){
         $items = Schedule::getAll();
         $sclasses = Sclass::getAll();
-        $number_live = Schedule::where('match_state',1)->count();
+        $number_live = Schedule::where('match_state',Schedule::IS_LIVE)->count();
         $params = [
             'items_arr' => $items,
             'sclasses' => $sclasses,
             'number_live' => $number_live,
+            'match_ids' => [],
         ];
         return view('schedules.index',$params);
     }
 
     public function favorites(){
-        $items = Schedule::getAll();
-        $sclasses = Sclass::getAll();
-        $number_live = Schedule::where('match_state',1)->count();
+        $favorites = session()->get('favorites',[]);
+        $match_ids = !empty($favorites['match']) ? $favorites['match'] : [];
+
+        $number_live = 0;
+        $items = $sclasses = [];
+        if( count($match_ids) ){
+            $items = Schedule::getAll('',$match_ids);
+            $sclasses = Sclass::getAll();
+            $number_live = Schedule::where('is_live',Schedule::IS_LIVE);
+            if( count($match_ids) ){
+                $number_live->whereIn('schedule_id',$match_ids);
+            }
+            $number_live = $number_live->count();
+        }
+        
         $params = [
             'items_arr' => $items,
             'sclasses' => $sclasses,
             'number_live' => $number_live,
+            'match_ids' => $match_ids,
         ];
         return view('schedules.index',$params);
     }
 
     public function ajaxSchedules($type = ''){
-        $items = Schedule::getAll($type);
+        $match_ids = request()->match_ids;
+        $match_ids = $match_ids ? explode(',',$match_ids) : [];
+        $items = Schedule::getAll($type,$match_ids);
         $sclasses = Sclass::getAll();
         $params = [
             'items_arr' => $items,

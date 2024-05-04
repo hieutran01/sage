@@ -5,6 +5,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\SclassController;
 
 Route::get('/schedules',[ScheduleController::class,'index'])->name('schedules.index');
+Route::get('/favorites',[ScheduleController::class,'favorites'])->name('schedules.favorites');
 Route::post('/ajax/schedules/{type?}',[ScheduleController::class,'ajaxSchedules'])->name('schedules.ajaxSchedules');
 Route::post('/ajax/scheduleFavorite/{id}/{type}',[ScheduleController::class,'ajaxScheduleFavorite'])->name('schedules.ajaxScheduleFavorite');
 Route::get('/teams',[TeamController::class,'index'])->name('teams.index');

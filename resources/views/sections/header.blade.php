@@ -1,3 +1,6 @@
+@php
+$cr_name = Route::currentRouteName();
+@endphp
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
     <div class="container px-5">
         <a class="navbar-brand fw-bold" href="{{ route('schedules.index') }}">LiveScore</a>
@@ -18,11 +21,10 @@
             */
             @endphp
             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('schedules.index') }}">Lịch Thi Đấu</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('teams.index') }}">Đội Bóng</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Giải Đấu</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Yêu Thích</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Liên Hệ</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3 {{ $cr_name == 'schedules.index' ? 'active' : ''; }}" href="{{ route('schedules.index') }}">Lịch Thi Đấu</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3 {{ $cr_name == 'teams.index' ? 'active' : ''; }}" href="{{ route('teams.index') }}">Đội Bóng</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3 {{ $cr_name == 'sclasses.index' ? 'active' : ''; }}" href="{{ route('sclasses.index') }}">Giải Đấu</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3 {{ $cr_name == 'schedules.favorites' ? 'active' : ''; }}" href="{{ route('schedules.favorites') }}">Yêu Thích</a></li>
             </ul>
         </div>
     </div>

@@ -17,7 +17,7 @@
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="schedules-data" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade show active" id="schedules-data" data-match_ids="{{ implode(',',$match_ids) }}">
                 @include('schedules.includes.table')
             </div>
         </div>

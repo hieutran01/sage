@@ -3,10 +3,14 @@
 
 function loadSchedule(type = '',obj){
     jQuery('.nav-link').removeClass('active');
+    let match_ids = jQuery('#schedules-data').data('match_ids')
     jQuery(obj).addClass('active');
     jQuery.ajax({
         url: '/ajax/schedules/'+type,
         method:'POST',
+        data: {
+            match_ids:match_ids
+        },
         success: function(res){
             jQuery('#schedules-data').html(res.html)
         }
