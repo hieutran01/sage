@@ -1,53 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 <style>
-.container {
-    width: 80%;
-    margin: auto;
-}
-
-.custom-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.custom-table td,
-.custom-table th {
-    border-bottom: 1px solid #ddd;
-    padding: 8px;
-}
-
-
-.custom-table tr:hover {
-    background-color: #ddd;
-}
-
-.nav-link:not(.active) {
-    background-color: #DDDDDD;
-    margin-right: 10px;
-    color: #333;
-    font-weight: bold;
-}
-
-.nav-link.active {
-    background-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    margin-right: 10px;
-
-}
-
-.moveable {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    margin-left: 205px;
-}
-
-.lighter-color {
-    color: #999;
-}
-
 .detail-link {
     display: inline-block;
     margin-left: 10px;
@@ -125,8 +78,12 @@
     align-items: flex-end;
     position: relative;
 }
-</style>
+.arrow-link .club-card__icon {
+    color: black;
+}
 
+</style>
+<section class="py-5">
 <div class="container">
     <div class="club-cards-wrapper indexSection">
         <ul class="club-list dataContainer">
@@ -140,8 +97,8 @@
                     </div>
                     <div class="club-card__info">
                         <div class="club-card__name-container">
+                            <!-- <i class="fas fa-arrow-right club-card__icon"></i> -->
                             <h2 class="club-card__name">{{$item->name_e}}</h2>
-                            <span class="club-card__stadium">Emirates Stadium</span>
                         </div>
 
                         <svg class="club-card__icon">
@@ -185,26 +142,36 @@
                 <tr style="background-color: #ddd;">
                     <th style="font-weight: bold;">Câu lạc bộ</th>
                     <th style="font-weight: bold;">Sân nhà của đội</th>
-                    <th style="font-weight: bold;">Chi tiết</th>
+                    <th style="font-weight: bold;">Giải đấu</th>    
+                    <!-- <th style="font-weight: bold;">Địa chỉ</th> -->
+                    <th style="font-weight: bold;"></th>
                 </tr>
 
                 @foreach ($items as $item)
                 <tr>
                     <td>
-                        <img src="{{ $item->flag }}" alt="{{ $item->name_e }} Logo" width="40">
-                       {{ $item->name_e }}
+                        <a href="{{ $item->url }}" style="color: inherit; text-decoration: none;">
+                            <img src="{{ $item->flag }}" alt="{{ $item->name_e }} Logo" width="40">
+                            {{ $item->name_e }}
+                        </a>
                     </td>
                     <td>
-                        <i class="fas fa-futbol"></i>
+                    <i class="fas fa-futbol"></i>
                         {{ $item->gymnasium_en }}
                     </td>
+                    <td>{{ $item->sclass->name_e }} </td>
+                    <!-- <td>{{ $item->address }} </td> -->
                     <td>
-                        <a href="{{ $item->url }}"><i class="fa fa-chevron-right"></i></a>
+                        <a href="{{ $item->url }}" class="arrow-link">
+                            <i class="fas fa-arrow-right club-card__icon"></i>
+                        </a>
                     </td>
+
                 </tr>
                 @endforeach
             </table>
         </div>
     </div>
 </div>
+</section>
 @endsection
