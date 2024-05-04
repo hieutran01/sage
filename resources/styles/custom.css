@@ -35,3 +35,7 @@
 .lighter-color {
     color: #999;
 }
+
+.curson-poiter {
+    cursor: pointer;
+}

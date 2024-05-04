@@ -1,13 +1,18 @@
 <table class="table custom-table">
     @foreach ( $items_arr as $sclass_id =>  $items)
-        <tr style="background-color: #ddd;">
-            <td class="lighter-color"><i class="far fa-star"></i></td>
+        <tr data-id="{{$sclass_id}}" class="sclasse sclasse_{{$sclass_id}}" style="background-color: #ddd;">
+            <td class="lighter-color">
+                <i onclick="addFavorite({{$sclass_id}},'sclass')" 
+                class="curson-poiter favoriteScheduleSclass favoriteScheduleSclass_{{$sclass_id}} far fa-star {{ in_array($sclass_id,$favorites['sclass']) ? 'fas' : '' }}"></i>
+            </td>
             <td><img src="{{ $sclasses[$sclass_id]->sclass_pic }}" alt="Sclass Pic" width="25"></td>
             <td colspan="6">{{ $sclasses[$sclass_id]->name_e}}</td>
         </tr>
         @foreach ( $items as $item)
-        <tr>
-            <td class="lighter-color"><i class="far fa-star"></i></td>
+        <tr data-id="{{$item->schedule_id}}" class="schedule schedule_{{ $item->schedule_id }} belongTo_sclasse_{{$sclass_id}}">
+            <td class="lighter-color">
+                <i onclick="addFavorite({{$item->schedule_id}},'match')" 
+                class="curson-poiter favoriteScheduleMatch favoriteScheduleMatch_{{$item->schedule_id}} far fa-star  {{ in_array($item->schedule_id,$favorites['match']) ? 'fas' : '' }}"></i></td>
             <td id="match_time_{{ $item->schedule_id }}" class="lighter-color">{{ $item->match_time_fm}}</td>
             <td id="match_minute_{{ $item->schedule_id }}"> <span style="color: red;">{{ $item->match_minutes_fm}}</td>
             <td class="text-end">
