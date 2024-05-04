@@ -25,6 +25,7 @@ class App extends Composer
         return [
             'siteName' => $this->siteName(),
             'currentTime' => \App\Models\Schedule::TIME_NOW,
+            'favorites' => $this->favorites()
         ];
     }
 
@@ -36,5 +37,12 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+    public function favorites()
+    {
+        $favorites = session()->get('favorites',[]);
+        $favorites['match'] = !empty($favorites['match']) ? $favorites['match'] : [];
+        $favorites['sclass'] = !empty($favorites['sclass']) ? $favorites['sclass'] : [];
+        return $favorites;
     }
 }

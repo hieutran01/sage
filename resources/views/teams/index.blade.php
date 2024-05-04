@@ -1,95 +1,12 @@
 @extends('layouts.main')
 @section('content')
-<style>
-.detail-link {
-    display: inline-block;
-    margin-left: 10px;
-}
-
-.club-card__name {
-    font-family: PremierSans-Heavy, Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    color: #37003c;
-    letter-spacing: -.4px;
-}
-
-.club-card-wrapper {
-    position: relative;
-    border-radius: 8px;
-    width: calc(20% - 20px);
-}
-
-.club-card__background,
-.club-card__svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    border-radius: .8rem;
-}
-
-.club-card__svg path {
-    fill: #F3F3F3;
-}
-
-.club-card__background {
-    z-index: -1;
-    transition: background-image .2s ease;
-    background-color: transparent;
-}
-
-.club-list {
-    max-width: 1400px;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.club-card {
-    box-sizing: border-box;
-    height: 12rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.2rem;
-    outline: .1rem solid #ebe5eb;
-    border-radius: .8rem;
-    text-decoration: none;
-    overflow: hidden;
-}
-
-.club-card-wrapper:hover {
-    background-color: #f0f0f0;
-}
-
-.badge-image-container .badge-image--78 {
-    width: 7.8rem;
-    height: 7.8rem;
-}
-
-.club-card__info {
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-}
-.arrow-link .club-card__icon {
-    color: black;
-}
-
-</style>
 <section class="py-5">
 <div class="container">
     <div class="club-cards-wrapper indexSection">
-        <ul class="club-list dataContainer">
+        <div class="row">
             @foreach ($items as $item)
-            <li class="club-card-wrapper">
-                <a href="{{ $item->url }}" class="club-card club-card--t3  indexItem t3">
+            <div class="col-lg-2 col-xs-6 mb-4">
+                <a target="_blank" href="{{ $item->url }}" class="club-card club-card--t3  indexItem t3">
                     <div class="club-card__badge">
                         <span class="badge badge-image-container" data-widget="club-badge-image" data-size="100">
                             <img class="badge-image badge-image--78 js-badge-image" src="{{ $item->flag}}" alt="flag">
@@ -130,9 +47,9 @@
                         </svg>
                     </div>
                 </a>
-            </li>
+            </div>
             @endforeach
-        </ul>
+        </div>
 
     </div>
     <div class="tab-content" id="pills-tabContent">
@@ -150,7 +67,7 @@
                 @foreach ($items as $item)
                 <tr>
                     <td>
-                        <a href="{{ $item->url }}" style="color: inherit; text-decoration: none;">
+                        <a target="_blank" href="{{ $item->url }}" style="color: inherit; text-decoration: none;">
                             <img src="{{ $item->flag }}" alt="{{ $item->name_e }} Logo" width="40">
                             {{ $item->name_e }}
                         </a>

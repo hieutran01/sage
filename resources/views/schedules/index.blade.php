@@ -7,17 +7,17 @@
                 <button type="button" onclick="loadSchedule('',this)" class="nav-link active" >Tất cả</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button type="button" onclick="loadSchedule(1,this)" class="nav-link">Trực tiếp(<?= $number_live ;?>)</button>
+                <button type="button" onclick="loadSchedule({{ \App\Models\Schedule::IS_LIVE }},this)" class="nav-link">Trực tiếp(<?= $number_live ;?>)</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button type="button" onclick="loadSchedule(-1,this)" class="nav-link" >Đã kết thúc</button>
+                <button type="button" onclick="loadSchedule({{ \App\Models\Schedule::FINISHED }},this)" class="nav-link" >Đã kết thúc</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button type="button" onclick="loadSchedule(0,this)" class="nav-link" >Lịch thi đấu</button>
+                <button type="button" onclick="loadSchedule({{ \App\Models\Schedule::NOT_START }},this)" class="nav-link" >Lịch thi đấu</button>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="schedules-data" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade show active" id="schedules-data" data-match_ids="{{ implode(',',$match_ids) }}">
                 @include('schedules.includes.table')
             </div>
         </div>

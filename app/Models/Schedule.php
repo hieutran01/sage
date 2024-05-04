@@ -7,7 +7,11 @@ class Schedule extends Model {
     protected $table = 'schedules';
     protected $primaryKey = 'schedule_id';
 
-    const TIME_NOW = '2024-05-20 21:30:00'; 
+    const TIME_NOW = '2024-05-20 21:30:00';
+    const IS_LIVE = 1;
+    const NOT_START = 0;
+    const FINISHED = -1;
+    const POSTPONED = -2;
 
     public function homeTeam(){
         return $this->belongsTo(Team::class,'home_team_id','team_id');
@@ -22,10 +26,17 @@ class Schedule extends Model {
     }
 
     // Custom methods
-    public static function getAll( $match_state = '' ){
+    public static function getAll( $match_state = '',$match_ids = [] ){
         $query = self::orderBy('match_time','ASC');
+        if( count($match_ids) ){
+            $query->whereIn('schedule_id',$match_ids);
+        }
         if( $match_state !== '' ){
-            $query->where('match_state',$match_state);
+            if($match_state == self::IS_LIVE){
+                $query->where('is_live',self::IS_LIVE);
+            }else{
+                $query->where('match_state',$match_state);
+            }
         }
         $items = $query->get();
         $items_arr = [];
@@ -45,13 +56,13 @@ class Schedule extends Model {
     public function getMatchMinutesFmAttribute()
     {
         switch ($this->match_state) {
-            case '-2':
+            case self::POSTPONED:
                 return 'Hoãn';
                 break;
-            case '-1':
+            case self::FINISHED:
                 return 'Đã kết thúc';
                 break;
-            case '0':
+            case self::NOT_START:
                 return 'Chưa bắt đầu';
                 break;
             default:
