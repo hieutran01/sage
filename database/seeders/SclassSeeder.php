@@ -221,7 +221,7 @@ class SclassSeeder extends Seeder
             'count_round' => 34,
             'curr_round' => 1,
             'curr_match_season' => '2024-2025',
-            'sclass_pic' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/S%C3%BCper_Lig_Logo.svg/1200px-S%C3%BCper_Lig_Logo.svg.png',
+            'sclass_pic' => 'https://upload.wikimedia.org/wikipedia/vi/e/ef/S%C3%BCper_Lig_logo.png',
             'if_stop' => 0,
             'count_group' => 1,
             'bf_simply_disp' => 1,
