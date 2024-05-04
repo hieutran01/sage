@@ -1,0 +1,32 @@
+{
+  "app": {
+    "js": [
+      "js/runtime.ddac92.js",
+      "js/app.3dfe53.js"
+    ],
+    "css": [
+      "css/app.ef46db.css"
+    ],
+    "dependencies": []
+  },
+  "editor": {
+    "js": [
+      "js/runtime.ddac92.js",
+      "js/editor.73bc60.js"
+    ],
+    "css": [
+      "css/editor.ef46db.css"
+    ],
+    "dependencies": []
+  },
+  "scripts": {
+    "js": [
+      "js/runtime.ddac92.js",
+      "js/scripts.6ec786.js"
+    ],
+    "css": [
+      "css/scripts.eb18e1.css"
+    ],
+    "dependencies": []
+  }
+}

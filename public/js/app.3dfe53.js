@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_roots_bud_sage=self.webpackChunk_roots_bud_sage||[]).push([[143],{"./styles/app.css":function(){},"./scripts/app.js":function(){}},function(s){var p=function(p){return s(s.s=p)};p("./scripts/app.js"),p("./styles/app.css")}]);
