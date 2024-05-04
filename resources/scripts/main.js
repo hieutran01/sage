@@ -18,9 +18,9 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
-
-
-function loadSchedule(type = '',obj){
+jQuery('body').on('click','.loadSchedule',function(){
+    var type = jQuery(this).data('type');
+    var obj = jQuery(this);
     jQuery('.nav-link').removeClass('active');
     let match_ids = jQuery('#schedules-data').data('match_ids')
     jQuery(obj).addClass('active');
@@ -34,9 +34,10 @@ function loadSchedule(type = '',obj){
             jQuery('#schedules-data').html(res.html)
         }
     })
-}
-
-function addFavorite(item_id,type = 'match'){
+})
+jQuery('body').on('click','.addFavorite',function(){
+    var item_id = jQuery(this).data('item_id');
+    var type = jQuery(this).data('type');
     jQuery.ajax({
         url: '/ajax/scheduleFavorite/'+item_id+'/'+type,
         method:'POST',
@@ -48,14 +49,12 @@ function addFavorite(item_id,type = 'match'){
             let match_ids = res.match_ids;
             let sclass_ids = res.sclass_ids;
             jQuery.each(sclass_ids,function(key,sclass_id){
-                console.log('sclass_id',sclass_id);
                 jQuery('.favoriteScheduleSclass_'+sclass_id).addClass('fas');
             });
 
             jQuery.each(match_ids,function(key,match_id){
-                console.log('match_id',match_id);
                 jQuery('.favoriteScheduleMatch_'+match_id).addClass('fas');
             });
         }
     })
-}
+});
