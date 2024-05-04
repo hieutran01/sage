@@ -13,6 +13,12 @@ class SclassController extends Controller
         $params = [
             'items' => $items
         ];
-        return view('sclass.index',$params);
+        return view('sclasses.index',$params);
+    }
+    public function show($id)
+    {
+        $sclass = Sclass::find($id);
+      
+        return view('sclasses.show', compact('sclass'));
     }
 }
