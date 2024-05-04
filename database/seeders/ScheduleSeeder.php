@@ -18,7 +18,7 @@ class ScheduleSeeder extends Seeder
             'round' => 3,
             'grouping1' => 'A',
             'home_team_id' => 1,
-            'guest_team_id' => 2,
+            'guest_team_id' => 5,
             'neutrality' => false,
             'match_time' => '2024-05-20 16:00:00',
             'match_state' => 1,
@@ -54,12 +54,12 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'sclass_id' => 2,
+            'sclass_id' => 1,
             'match_season' => '2024-2025',
             'round' => 1,
             'grouping1' => 'B',
-            'home_team_id' => 2,
-            'guest_team_id' => 3,
+            'home_team_id' => 4,
+            'guest_team_id' => 6,
             'neutrality' => false,
             'match_time' => '2024-05-21 15:30:00',
             'match_state' => 0,
@@ -95,12 +95,12 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'sclass_id' => 3,
+            'sclass_id' => 1,
             'match_season' => '2024-2025',
             'round' => 2,
             'grouping1' => null,
-            'home_team_id' => 3,
-            'guest_team_id' => 4,
+            'home_team_id' => 6,
+            'guest_team_id' => 1,
             'neutrality' => true,
             'match_time' => '2024-05-25 18:00:00',
             'match_time2' => '2024-05-25 19:30:00',
@@ -136,7 +136,7 @@ class ScheduleSeeder extends Seeder
             'guest_corner_half' => null,
         ]);
         Schedule::create([
-            'sclass_id' => 4,
+            'sclass_id' => 1,
             'match_season' => '2024-2025',
             'round' => 2,
             'grouping1' => 'A',
@@ -177,12 +177,12 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 5,
+            'sclass_id' => 2,
             'match_season' => '2024-2025',
             'round' => 2,
             'grouping1' => 'A',
-            'home_team_id' => 5,
-            'guest_team_id' => 6,
+            'home_team_id' => 2,
+            'guest_team_id' => 7,
             'neutrality' => false,
             'match_time' => '2024-05-24 18:30:00',
             'match_state' => 0,
@@ -218,12 +218,12 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 6,
+            'sclass_id' => 2,
             'match_season' => '2024-2025',
             'round' => 3,
             'grouping1' => null,
-            'home_team_id' => 6,
-            'guest_team_id' => 7,
+            'home_team_id' => 7,
+            'guest_team_id' => 8,
             'neutrality' => true,
             'match_time' => '2024-05-26 19:00:00',
             'match_time2' => '2024-05-26 20:30:00',
@@ -259,11 +259,11 @@ class ScheduleSeeder extends Seeder
             'guest_corner_half' => null,
         ]);
         Schedule::create([
-            'sclass_id' => 7,
+            'sclass_id' => 2,
             'match_season' => '2024-2025',
             'round' => 4,
             'grouping1' => 'B',
-            'home_team_id' => 7,
+            'home_team_id' => 2,
             'guest_team_id' => 8,
             'neutrality' => false,
             'match_time' => '2024-05-27 20:00:00',
@@ -300,12 +300,12 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 8,
+            'sclass_id' => 3,
             'match_season' => '2024-2025',
             'round' => 3,
             'grouping1' => null,
-            'home_team_id' => 8,
-            'guest_team_id' => 9,
+            'home_team_id' => 9,
+            'guest_team_id' => 10,
             'neutrality' => true,
             'match_time' => '2024-05-28 18:00:00',
             'match_time2' => '2024-05-28 19:30:00',
@@ -342,12 +342,12 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 9,
+            'sclass_id' => 3,
             'match_season' => '2024-2025',
             'round' => 4,
             'grouping1' => null,
-            'home_team_id' => 9,
-            'guest_team_id' => 10,
+            'home_team_id' => 3,
+            'guest_team_id' => 9,
             'neutrality' => true,
             'match_time' => '2024-05-30 19:30:00',
             'match_time2' => '2024-05-30 21:00:00',
@@ -384,12 +384,12 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 10,
+            'sclass_id' => 3,
             'match_season' => '2024-2025',
             'round' => 5,
             'grouping1' => 'A',
-            'home_team_id' => 1,
-            'guest_team_id' => 3,
+            'home_team_id' => 3,
+            'guest_team_id' => 10,
             'neutrality' => false,
             'match_time' => '2024-06-01 21:00:00',
             'match_state' => 0,
