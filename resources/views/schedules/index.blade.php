@@ -42,7 +42,7 @@
                             <span style="color: red;">{{ $item->home_score}}</span><span
                                 style="color: red;">-</span><span style="color: red;">{{ $item->guest_score}}</span>
                         </td>
-                        <td><img src="{{ $item->homeTeam->flag }}" alt="Flag" width="25">{{ $item->guestTeam->name_e }}
+                        <td><img src="{{ $item->homeTeam->flag }}" alt="Flag" width="25"> {{ $item->guestTeam->name_e }}
                         </td>
                         <td class="lighter-color">HT {{ $item->home_half_score}}-{{ $item->guest_half_score}}</td>
                         <td class="lighter-color">
