@@ -18,16 +18,12 @@
             */
             @endphp
             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('schedules.index') }}">Schedules</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('teams.index') }}">Teams</a></li>
-                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Sclasses</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('schedules.index') }}">Lịch Thi Đấu</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('teams.index') }}">Đội Bóng</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Giải Đấu</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Yêu Thích</a></li>
+                <li class="nav-item"><a class="nav-link me-lg-3" href="{{ route('sclasses.index') }}">Liên Hệ</a></li>
             </ul>
-            <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                <span class="d-flex align-items-center">
-                    <i class="bi-chat-text-fill me-2"></i>
-                    <span class="small">Send Feedback</span>
-                </span>
-            </button>
         </div>
     </div>
 </nav>

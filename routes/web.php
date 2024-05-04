@@ -5,6 +5,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\SclassController;
 
 Route::get('/schedules',[ScheduleController::class,'index'])->name('schedules.index');
+Route::post('/ajax/schedules/{type?}',[ScheduleController::class,'ajaxSchedules'])->name('schedules.ajaxSchedules');
 Route::get('/teams',[TeamController::class,'index'])->name('teams.index');
 Route::get('/sclasses',[SclassController::class,'index'])->name('sclasses.index');
 Route::get('/sclasses/{id}', [SclassController::class, 'show'])->name('sclasses.show');
