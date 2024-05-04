@@ -136,7 +136,7 @@ class ScheduleSeeder extends Seeder
             'guest_corner_half' => null,
         ]);
         Schedule::create([
-            'sclass_id' => 1,
+            'sclass_id' => 4,
             'match_season' => '2024-2025',
             'round' => 2,
             'grouping1' => 'A',
@@ -177,7 +177,7 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 2,
+            'sclass_id' => 5,
             'match_season' => '2024-2025',
             'round' => 2,
             'grouping1' => 'A',
@@ -218,7 +218,7 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 3,
+            'sclass_id' => 6,
             'match_season' => '2024-2025',
             'round' => 3,
             'grouping1' => null,
@@ -259,7 +259,7 @@ class ScheduleSeeder extends Seeder
             'guest_corner_half' => null,
         ]);
         Schedule::create([
-            'sclass_id' => 1,
+            'sclass_id' => 7,
             'match_season' => '2024-2025',
             'round' => 4,
             'grouping1' => 'B',
@@ -300,7 +300,7 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 2,
+            'sclass_id' => 8,
             'match_season' => '2024-2025',
             'round' => 3,
             'grouping1' => null,
@@ -342,7 +342,7 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 3,
+            'sclass_id' => 9,
             'match_season' => '2024-2025',
             'round' => 4,
             'grouping1' => null,
@@ -384,7 +384,7 @@ class ScheduleSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'sclass_id' => 1,
+            'sclass_id' => 10,
             'match_season' => '2024-2025',
             'round' => 5,
             'grouping1' => 'A',
